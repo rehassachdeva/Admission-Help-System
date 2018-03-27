@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from mongoengine import *
+connect("ahsmongodb")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xoro2+r18knh462&tk8r)a59--d!sb559&8udjuts0&5+iq+p-'
+SECRET_KEY = 'g#qje91$)_&e%y7@ut(ja#%#8$n4_(n$be0h$nmmy&$-%40hsy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
