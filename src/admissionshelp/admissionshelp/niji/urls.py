@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^login/$', views.login_view, name='login'),
     url(r'^reg/$', views.reg_view, name='reg'),
     url(r'^logout/$', views.logout_view, name="logout"),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
     url(r'^search/$', views.search_redirect, name='search_redirect'),
     url(r'^search/(?P<keyword>.*?)/page/(?P<page>[0-9]+)/$', views.SearchView.as_view(), name='search'),
     url(r'^search/(?P<keyword>.*?)/$', views.SearchView.as_view(), name='search'),
