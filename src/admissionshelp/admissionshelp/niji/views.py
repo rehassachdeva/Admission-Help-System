@@ -320,7 +320,7 @@ def login_view(request):
             valid = False
             messages.add_message(request, messages.INFO, _("Incorrect password"))
         if not valid:
-            return HttpResponseRedirect(reverse("niji:login"))
+            return HttpResponseRedirect(reverse("login"))
 
 
 def reg_view(request):

@@ -21,7 +21,8 @@ urlpatterns = [
     url(r'^u/(?P<pk>\d+)/$', views.user_info, name='user_info'),
     url(r'^u/(?P<pk>\d+)/topics/page/(?P<page>[0-9]+)/$', views.UserTopics.as_view(), name='user_topics'),
     url(r'^u/(?P<pk>\d+)/topics/$', views.UserTopics.as_view(), name='user_topics'),
-    url(r'^login/$', views.login_view, name='login'),
+    #url(r'^login/$','django.contrib.auth.views.login',{'template_name': 'niji/login.html'}),
+    url(r'^login/$', views.login_view,{'template_name': 'niji/login.html'}, name='login'),
     url(r'^reg/$', views.reg_view, name='reg'),
     url(r'^logout/$', views.logout_view, name="logout"),
     url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
