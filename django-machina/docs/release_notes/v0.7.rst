@@ -1,0 +1,20 @@
+####################################################
+Django-machina 0.7 release notes (UNDER DEVELOPMENT)
+####################################################
+
+Requirements and compatibility
+------------------------------
+
+Python 2.7, 3.4, 3.5 and 3.6. Django 1.11 and 2.0.
+
+Minor changes
+-------------
+
+* Topics are now a "raw ID field" in the post admin pages
+  (`#99 <https://github.com/ellmetha/django-machina/pull/99>`_)
+
+Fixes
+-----
+
+* Fix incorrect labels appearing when using the select widget associated with the forum tree
+  (`#102 <https://github.com/ellmetha/django-machina/issues/102>`_)

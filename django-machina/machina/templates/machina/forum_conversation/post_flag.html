@@ -1,0 +1,45 @@
+{% extends 'board_base.html' %}
+{% load i18n %}
+{% load forum_conversation_tags %}
+
+{% block sub_title %}{% trans "" %}{% endblock sub_title %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default post-edit">
+      <div class="panel-heading">
+        <h3 class="panel-title">{% trans "You are reporting a post. Please select a reason." %}</h3>
+      </div>
+      <div class="form-group">
+        <br />
+        <div class="row">
+          <div class="col-md-12">
+            {% include "partials/form_field.html" with field=post_form.flag_type %}
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <form method="post" action="." class="form" enctype="multipart/form-data" novalidate>{% csrf_token %}
+          <div class="form-actions">
+            <input type="submit" class="btn btn-large btn-primary" value="{% trans "Submit" %}" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block onbodyload %}
+  machina.attachment.init();
+{% endblock onbodyload %}
+
+{% block extra_css %}
+  {{ post_form.media.css }}
+{% endblock extra_css %}
+
+{% block extra_js %}
+  {{ post_form.media.js }}
+{% endblock extra_js %}

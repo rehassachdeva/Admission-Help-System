@@ -1,0 +1,36 @@
+#############################################
+Django-machina 0.4 release notes (2016-11-05)
+#############################################
+
+Requirements and compatibility
+------------------------------
+
+Python 2.7, 3.3, 3.4 and 3.5. Django 1.8, 1.9 and 1.10.
+
+New features
+------------
+
+* Add a way to disable signature when posting a message
+* Add a way to lock a topic when posting a new message (only if the user has the permission to do so)
+* Add a ``MACHINA_MARKUP_WIDGET_KWARGS`` setting to configure the keyword arguments that will be used when instanciating the widgets associated with the ``MACHINA_MARKUP_WIDGET`` setting
+* Add a ``MACHINA_BASE_TEMPLATE_NAME`` setting to configure the name of the base template that is extended by the *django-machina*'s main ``board_base.html`` template
+
+Major changes
+-------------
+
+* The ``django-markdown`` editor has been replaced by a built-in widget using the `SimpleMDE Markdown editor <https://github.com/NextStepWebs/simplemde-markdown-editor>`_. If you were using the *django-machina*'s default settings you will have to remove ``django_markdown`` from your ``INSTALLED_APPS``
+
+Minor changes
+-------------
+
+* Fix: prevent users from editting their posts when the related topic is locked
+* Fix: prevent users from submitting polls without required fields
+* Display the filesize of attachments
+* Improve layout for locked topics
+* Improve performances by adding first post / last post foreign keys to the Topic model
+* Separate the forum specific CSS styles from the "vendor" styles (bootstrap, etc) in order to ease customization
+* Improve forum index layout (`#30`_)
+* Fix ``Topic.slug`` maximum length for MariaDB databases (`#32`_)
+
+.. _`#30`: https://github.com/ellmetha/django-machina/issues/30
+.. _`#32`: https://github.com/ellmetha/django-machina/pull/32

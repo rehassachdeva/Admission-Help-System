@@ -1,0 +1,17 @@
+###############################################
+Django-machina 0.5.2 release notes (2017-02-12)
+###############################################
+
+Requirements and compatibility
+------------------------------
+
+Python 2.7, 3.3, 3.4, 3.5 and 3.6. Django 1.8, 1.9 and 1.10.
+
+Minor changes
+-------------
+
+* Fixed a bug that occured when generating the slug of forum names containing unicode characters (`#48`_)
+* Fixed a template syntax error that occured when rendering topic lists with Django < 1.10.x (`#52`_)
+
+.. _`#48`: https://github.com/ellmetha/django-machina/pull/48
+.. _`#52`: https://github.com/ellmetha/django-machina/pull/52

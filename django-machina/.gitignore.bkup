@@ -1,0 +1,22 @@
+.DS_Store
+*.pyc
+*.pyo
+*.db
+__pycache__
+.coverage
+*.egg-info/
+*.egg/
+.cache/
+/dist/
+/build/
+docs/_build/
+public/
+whoosh_index/
+node_modules/
+.tox
+npm-debug.log
+tests/_testdata/media/machina
+tests/settings_local.py
+
+# Don't commit env-specific settings and files
+example_project/example_project/settings/env.py

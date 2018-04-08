@@ -1,0 +1,42 @@
+#############################################
+Django-machina 0.2 release notes (2016-05-15)
+#############################################
+
+Requirements and compatibility
+------------------------------
+
+Python 2.7, 3.3, 3.4 and 3.5. Django 1.8 and 1.9.
+
+New features
+------------
+
+* A view has been added to get all the posts of a forum member (`#15`_)
+* Topic subscription: a user can now subscribe to topics and access to their subscription list (`#16`_)
+* A new settings has been addded in order to allow limiting the length of topic posts: :ref:`MACHINA_POST_CONTENT_MAX_LENGTH <setting-post-content-max-length>`
+
+.. _`#15`: https://github.com/ellmetha/django-machina/issues/15
+.. _`#16`: https://github.com/ellmetha/django-machina/issues/16
+
+Minor changes
+-------------
+
+* Add a way to disable the configurable max length of the forum profile ``signature`` field (see :ref:`MACHINA_PROFILE_SIGNATURE_MAX_LENGTH <setting-profile-signature-max-length>` settings)
+* Fix: remove unnecessary ``Post`` inline form in ``Topic`` admin form (`#11`_)
+* Fix: fixed a bug that prevented to properly override some *django-machina* models (`#7`_)
+* Fix: fixed a bug that prevented to properly delete an unnaproved post (`#9`_)
+* Fix: add a missing translation in the forum detail view template (`#12`_)
+* Fix: fixed a bug that prevented models from some applications(``forum_attachments`` and ``forum_polls``) to be overridden
+* The *django-model-utils* module has been removed from project's dependencies
+
+.. _`#7`: https://github.com/ellmetha/django-machina/issues/7
+.. _`#9`: https://github.com/ellmetha/django-machina/issues/9
+.. _`#11`: https://github.com/ellmetha/django-machina/issues/11
+.. _`#12`: https://github.com/ellmetha/django-machina/issues/12
+
+Backwards incompatible changes
+------------------------------
+
+* The ``get_absolute_url`` method was removed from *django-machina* models
+* The ``Topic.subscribers`` related name was update to ``topic_subscriptions`` (instead of ``subscriptions``)
+* The ``forum_member.views.UserTopicsView`` view was replaced by the ``forum_member.views.UserPostsView`` view
+* The ``sub-title`` template block was renamed to ``sub_title`` in order to use the same convention as the other block names

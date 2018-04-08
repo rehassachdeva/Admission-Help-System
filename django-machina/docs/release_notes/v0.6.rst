@@ -1,0 +1,36 @@
+#############################################
+Django-machina 0.6 release notes (2017-12-18)
+#############################################
+
+Requirements and compatibility
+------------------------------
+
+Python 2.7, 3.4, 3.5 and 3.6. Django 1.11 and 2.0.
+
+New features
+------------
+
+* Add a new ``MACHINA_PROFILE_AVATARS_ENABLED`` setting allowing to disable built-in avatar support
+  if desired (`#77 <https://github.com/ellmetha/django-machina/pull/77>`_)
+
+Minor changes
+-------------
+
+* Permission name strings are now translatable
+* Improve performances related to tracking operations and forum visibility contents computations
+* The Markdown configuration has been updated so that line breaks are correctly rendered
+
+Backwards incompatible changes
+------------------------------
+
+* The ``PermissionHandler.get_forum_last_post`` method was removed
+
+Fixes
+-----
+
+* Fix a ``KeyError`` occuring when searching for permissions in the Django admin site
+  (`#79 <https://github.com/ellmetha/django-machina/issues/79>`_)
+* Fix an error in members' post counts calculation occuring when setting existing posts as unaproved
+  (`#89 <https://github.com/ellmetha/django-machina/issues/89>`_)
+* Fix an inconsistent label for the ``forum_feeds`` application
+  (`#95 <https://github.com/ellmetha/django-machina/issues/95>`_)
